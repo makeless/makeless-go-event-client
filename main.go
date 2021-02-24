@@ -24,6 +24,7 @@ func main() {
 
 	var logger = new(makeless_go_logger_basic.Logger)
 	var client = sse.NewClient(*urlFlag)
+
 	client.ReconnectNotify = func(err error, duration time.Duration) {
 		if _, err := colorRed.Printf("Error: %s\n", err.Error()); err != nil {
 			logger.Fatal(err)
