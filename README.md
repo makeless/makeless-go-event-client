@@ -4,14 +4,9 @@
 
 Event Client to test and debug Makeless Events (Server-Sent Events)
 
-## Install
-
-```bash
-go install github.com/makeless/makeless-go-event-client
-```
-
 ## Example
 
 ```bash
-makeless-go-event-client -url https://localhost:3000/api/auth/event
+make build
+./makeless-go-event-client -url https://localhost:3000/api/auth/event
 ```

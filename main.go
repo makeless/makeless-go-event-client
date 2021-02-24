@@ -16,6 +16,7 @@ func main() {
 	var urlFlag = flag.String("url", "", "makeless event source url")
 	flag.Parse()
 
+	var colorRed = color.New(color.FgRed, color.Bold)
 	var colorGreen = color.New(color.FgGreen, color.Bold)
 	var colorWhite = color.New(color.FgWhite)
 	var colorHiWhite = color.New(color.FgHiWhite)
@@ -23,6 +24,11 @@ func main() {
 
 	var logger = new(makeless_go_logger_basic.Logger)
 	var client = sse.NewClient(*urlFlag)
+	client.ReconnectNotify = func(err error, duration time.Duration) {
+		if _, err := colorRed.Printf("Error: %s\n", err.Error()); err != nil {
+			logger.Fatal(err)
+		}
+	}
 
 	if err := client.SubscribeRaw(func(event *sse.Event) {
 		if event == nil {
