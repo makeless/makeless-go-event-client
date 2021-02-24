@@ -1,2 +1,1 @@
-# makeless-go-event-client
-Makeless - SaaS Ecosystem - Golang Event Client
+# Makeless - SaaS Ecosystem - Golang Event Client
