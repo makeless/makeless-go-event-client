@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/fatih/color"
-	makeless_go_event_basic "github.com/makeless/makeless-go/event/basic"
+	"github.com/makeless/makeless-go/event/basic"
 	"github.com/makeless/makeless-go/logger/basic"
 	"github.com/r3labs/sse/v2"
 	"sync"
