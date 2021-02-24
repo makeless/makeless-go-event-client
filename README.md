@@ -8,5 +8,7 @@ Event Client to test and debug Makeless Events (Server-Sent Events)
 
 ```bash
 make build
-./makeless-go-event-client -url https://localhost:3000/api/auth/event
+./makeless-go-event-client \
+  -url https://localhost:3000/api/auth/event \
+  -token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGxvZWZmZWwuaW8iLCJlbWFpbFZlcmlmaWNhdGlvbiI6dHJ1ZSwiZXhwIjoxNjE0MTg5MDU2LCJvaG5nb040ZzdmQUd6WjlieXJkS01pTmtNYnFRek5tQyI6MSwib3JpZ19pYXQiOjE2MTQxODU0NTZ9.SvvUIvHOW_B7HLwdqt5zsYzrpxks6PLsj2_tVxp21bo
 ```
