@@ -53,7 +53,7 @@ func main() {
 			logger.Fatal(err)
 		}
 
-		if _, err := colorHiWhite.Printf("%s\n", data.GetData()); err != nil {
+		if _, err := colorHiWhite.Printf("%+v\n", data.GetData()); err != nil {
 			logger.Fatal(err)
 		}
 	}); err != nil {
