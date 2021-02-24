@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"github.com/fatih/color"
 	"github.com/makeless/makeless-go/event/basic"
@@ -12,13 +13,16 @@ import (
 )
 
 func main() {
+	var urlFlag = flag.String("url", "", "makeless event source url")
+	flag.Parse()
+
 	var colorGreen = color.New(color.FgGreen, color.Bold)
 	var colorWhite = color.New(color.FgWhite)
 	var colorHiWhite = color.New(color.FgHiWhite)
 	var sep = "   "
 
 	var logger = new(makeless_go_logger_basic.Logger)
-	var client = sse.NewClient("https://localhost:3003/api/auth/company/1/group/1/message/event")
+	var client = sse.NewClient(*urlFlag)
 
 	if err := client.SubscribeRaw(func(event *sse.Event) {
 		if event == nil {
