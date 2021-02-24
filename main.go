@@ -15,6 +15,7 @@ func main() {
 	var colorGreen = color.New(color.FgGreen, color.Bold)
 	var colorWhite = color.New(color.FgWhite)
 	var colorHiWhite = color.New(color.FgHiWhite)
+	var sep = "  "
 
 	var logger = new(makeless_go_logger_basic.Logger)
 	var client = sse.NewClient("https://localhost:3003/api/auth/company/1/group/1/message/event")
@@ -32,15 +33,15 @@ func main() {
 			logger.Fatal(fmt.Errorf("event not unmarshallable"))
 		}
 
-		if _, err := colorGreen.Printf("%s:%s\t\t", string(event.Event), data.GetId()); err != nil {
+		if _, err := colorGreen.Printf("%s:%s%s", string(event.Event), data.GetId(), sep); err != nil {
 			logger.Fatal(err)
 		}
 
-		if _, err := colorHiWhite.Printf("%s\t\t", data.GetData()); err != nil {
+		if _, err := colorWhite.Printf("%s%s", time.Now().UTC(), sep); err != nil {
 			logger.Fatal(err)
 		}
 
-		if _, err := colorWhite.Printf("%s\n", time.Now().UTC().String()); err != nil {
+		if _, err := colorHiWhite.Printf("%s\n", data.GetData()); err != nil {
 			logger.Fatal(err)
 		}
 	}); err != nil {
