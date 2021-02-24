@@ -4,6 +4,8 @@
 
 Event Client to test and debug Makeless Events (Server-Sent Events)
 
+<img src="https://i.imgur.com/DTOS73n.gif" alt="command" width="600">
+
 ## Example
 
 ```bash
