@@ -11,18 +11,6 @@ import (
 	"time"
 )
 
-func fillString(content string, length int) string {
-	if len(content) >= length {
-		return content
-	}
-
-	for i := len(content); i <= length; i++ {
-		content += " "
-	}
-
-	return content
-}
-
 func main() {
 	var colorGreen = color.New(color.FgGreen, color.Bold)
 	var colorWhite = color.New(color.FgWhite)
@@ -59,4 +47,16 @@ func main() {
 	}); err != nil {
 		logger.Fatal(err)
 	}
+}
+
+func fillString(content string, length int) string {
+	if len(content) >= length {
+		return content
+	}
+
+	for i := len(content); i <= length; i++ {
+		content += " "
+	}
+
+	return content
 }
